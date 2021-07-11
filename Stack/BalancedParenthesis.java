@@ -12,19 +12,15 @@ public class BalancedParenthesis {
     public static boolean isBalanced(String str){
         Deque <Character> s = new ArrayDeque<>();
         for (int i = 0; i<str.length();i++){
-            if (str.charAt(i) == '('
-                    ||
-                    str.charAt(i) =='[' 
-                    ||
-                    str.charAt(i) =='{')
+            char x = str.charAt(i);
+            if (x == '(' || x =='[' || x =='{')
             {
-                s.add(str.charAt(i));
-
+                s.push(x);
             }
             else {
                 if(s.isEmpty() == true)
                 return false;
-            else if (matching(s.peek(), str.charAt(i)) == false)
+            else if (matching (s.peek(), x) == false)
                     return false;
                 else
                     s.pop();
