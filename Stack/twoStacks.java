@@ -62,4 +62,4 @@
     }
 
 }
-//Time complex
+//Time complexity = O(1) because we donot waste a single auxilary space.
